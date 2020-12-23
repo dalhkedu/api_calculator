@@ -31,7 +31,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @ExtendWith(SpringExtension.class)
 @ActiveProfiles("test")
-@WebMvcTest
+@WebMvcTest(controllers = MaterialController.class)
 @AutoConfigureMockMvc
 public class MaterialControllerTest {
 
@@ -49,9 +49,6 @@ public class MaterialControllerTest {
 
     @MockBean
     IMaterialService service;
-
-    @MockBean
-    private IProductService productService;
 
     @Test
     @DisplayName("Inserir materiais para gerar custo de um produto.")
